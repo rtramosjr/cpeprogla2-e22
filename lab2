@@ -1,0 +1,73 @@
+/**
+RAMOS, Ronaldo T. JR.
+E22 || Lab2 
+**/
+
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+#include <cmath>
+using namespace std;
+
+double problem1(double num){
+	cout<<"ceil(1) or floor(2)?:"<<endl;
+	int x;
+	cin >> x;
+	switch	(x){
+		case 1: cout<<"Enter number to round off: ";
+				cin>>num;
+				cout<<"Rounded value: "<<ceil(num)<<endl<<endl;
+			return ceil(num);
+		break;
+		case 2: cout<<"Enter number to round off: ";
+				cin>>num;
+				cout<<"Rounded value: "<<floor(num)<<endl<<endl;
+			return floor(num);
+	break;
+		default:
+			cout<<"Invalid input we will proceed to unique numbers"<<endl<<endl;
+	break;
+
+	}
+		
+	
+}
+
+void problem2(){
+	cout<<"Unique numbers: ";
+		int uniques[10], num;
+		srand((unsigned)time(NULL)); 
+		for(int i=0;i<10;i++){
+			num=(rand()%20);
+			for(int j=0;j<10;j++){
+				if(num==uniques[j]){
+						num=(rand()%21);
+			}
+				else{
+				uniques[i] = num;
+			}
+		}
+	}
+		for(int i=0;i<10;i++){
+			cout << uniques[i]<<" ";
+	}
+}
+
+void call_by_value(){
+	int n, result=1;
+		cout<<endl<<endl<<"Get the factorial of the number: ";
+		cin>>n;
+			for(int i=1;i<n+1;i++) {
+				if(n==0) cout<<" Result: 1\n";
+				else result=result*i;
+	}
+		cout<<"The factorial of "<<n<<" is "<<result<<endl;
+}
+
+main(){
+	double num;
+	int result;
+	problem1(num);
+	problem2();
+	call_by_value();
+}
